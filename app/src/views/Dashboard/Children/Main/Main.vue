@@ -8,29 +8,31 @@
                 <p>Next<br> Trip</p>
             </div>
             <div class="next-city-div">
-                <p>{{Next.Weather}}</p>
-                <p>{{Next.HighTemp}}</p>
-                <p>{{Next.LowTemp}}</p>
-                <p>{{Next.City}},{{Next.State}}</p>
-                <p>{{Next.NextDate}}</p>
+                <img id="weather-icon" :src="Next.Weather"/>
+                <p id="weather-ht">{{Next.HighTemp}}</p>
+                <p id="weather-lt">{{Next.LowTemp}}</p>
+                <p id="weather-t1">{{Next.City}},{{Next.State}}</p>
+                <p id="weather-t2">{{Next.NextDate}}</p>
             </div>
-            <div class="div">
-                <p>{{Next.FlightDepartLoc}}</p>
-                <p>{{Next.FlightArrivingLoc}}</p>
-                <p>{{Next.FlightNumber}}</p>
+            <div class="next-flight-div">
+                <p><b>Next Flight</b></p>
+                <p>Departing: {{Next.FlightDepartLoc}}</p>
+                <p>Arriving: {{Next.FlightArrivingLoc}}</p>
             </div>
-            <div class="div">
-                <p>{{Next.DepartureTime}}</p>
-                <p>{{Next.DepartureTime}}</p>
+            <div class="next-flight-info-div">
+                <img id="icon-depart" src="../../Assets/Depart.png"/>
+                <p id="depart-t">Departure Time: {{Next.DepartureTime}}</p>
+                <img id="icon-arrive" src="../../Assets/Land.png"/>
+                <p id="arrive-t">Arrival Time: {{Next.DepartureTime}}</p>
             </div>
-            <div class="div"> 
+            <div class="div-banner"> 
                 
             </div>
         </div>
     </div>
     <div class="middle-bar-left">
         <div class="main-panel">
-
+            <h3>Upcoming Calendar Events</h3>
         </div>
     </div>
     <div class="bottom-bar-left">
@@ -68,8 +70,8 @@ export default {
     data(){
       return {
         Next:{
-            Weather:'Sunny',
-            HighTemp:51,
+            Weather:require(`../../Assets/Rectangle 31@2x.png`),
+            HighTemp:58,
             LowTemp:49,
             City:'Los Angeles',
             State:'CA',
@@ -77,7 +79,6 @@ export default {
 
             FlightDepartLoc:'JFK T4',
             FlightArrivingLoc:'LAX T2',
-            FlightNumber:'DL1406',
 
             DepartureTime:'06:15AM EST',
             ArrivalTime:'09:15AM EST',
@@ -90,9 +91,80 @@ export default {
             Username:'@iamvincento',
             Status:'Online'
         },
-        CalendarEvents:{
-                    
-        },
+        CalendarEvents:[{
+            "Item":[
+                {
+                    Title:"This Item Is First",
+                    IconA:true,
+                    IconB:true,
+                    IconC:true,
+                    IconD:true
+                },
+                {
+                    Title:"This Item Is Second",
+                    IconA:true,
+                    IconB:false,
+                    IconC:false,
+                    IconD:true
+                },
+                {
+                    Title:"This Item Is Third",
+                    IconA:true,
+                    IconB:false,
+                    IconC:false,
+                    IconD:false
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:true,
+                    IconB:false,
+                    IconC:false,
+                    IconD:false
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:false,
+                    IconC:false,
+                    IconD:true
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:false,
+                    IconC:false,
+                    IconD:true
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:true,
+                    IconC:false,
+                    IconD:true
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:false,
+                    IconC:false,
+                    IconD:false
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:false,
+                    IconC:false,
+                    IconD:false
+                },
+                {
+                    Title:"This Item Is Later",
+                    IconA:false,
+                    IconB:true,
+                    IconC:false,
+                    IconD:true
+                },
+            ],            
+        }],
         TravelPlans:[
             {
                 Title:'Gregs Wedding',
@@ -179,8 +251,118 @@ export default {
                 width: 25%;
             }
 
+                #weather-icon {
+                    height: 40%;
+                    position: absolute;
+                    left:7.5%;
+                    top: 7.5%;
+                    width: auto;
+                }
+
+                #weather-ht {
+                    font-size: 2vh;
+                    height: 40%;
+                    position: absolute;
+                    left:10%;
+                    top: 30%;
+                    width: auto;
+                }
+
+                #weather-lt {
+                    font-size: 1.25vh;
+                    height: 40%;
+                    position: absolute;
+                    left:10.75%;
+                    top: 62.5%;
+                    width: auto;
+                }
+
+                #weather-t1{
+                    font-size: 2.5vh;
+                    height: 30%;
+                    position: absolute;
+                    left:30%;
+                    top: 0%;
+                    width: auto;
+                }
+
+                #weather-t2{
+                    font-size: 2.5vh;
+                    height: 30%;
+                    position: absolute;
+                    left:30%;
+                    top: 30%;
+                    width: auto;
+                }
+
+            .next-flight-div {
+                background-color: #254266;
+                height: 100%;
+                font-size: 2.25vh;
+                top: 0%;
+                left:32.5%;
+                position: absolute;
+                width: 12.5%;
+            }
+
+            .next-flight-div p {
+                font-size: 1.25vh;
+            }
+
+            .next-flight-info-div {
+                height: 100%;
+                font-size: 2.25vh;
+                top: 0%;
+                left:45%;
+                position: absolute;
+                width: 30%;
+            }
+
+                .next-flight-info-div p {
+                    font-size: 2vh;
+                }
+
+                #icon-depart {
+                    position: absolute;
+                    top: 10%;
+                    height: 40%;
+                    left: 10%;
+                }
+
+                    #depart-t {
+                        text-align: left;
+                        position: relative;
+                        left:27.5%;
+                    }
+
+                    #arrive-t {
+                        text-align: left;
+                        position: relative;
+                        left:27.5%;
+                    }
+
+                #icon-arrive {
+                    position: absolute;
+                    top: 50%;
+                    height: 40%;
+                    left: 10%;
+                }
+
+            .div-banner {
+                background-image:url('../../Assets/la-banner.png');
+                background-position-y: 60%;
+                background-position-x: 920%;
+                height: 100%;
+                width: 30%;
+                position: absolute;
+                left:75%;
+            }
+
+            
+
         .middle-bar-left {
             background-color: whitesmoke;
+            color: black;
             height: 80vh;
             position: absolute;
             top: 10%;
