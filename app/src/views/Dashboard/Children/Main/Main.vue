@@ -26,7 +26,6 @@
                 <p id="arrive-t">Arrival Time: {{Next.DepartureTime}}</p>
             </div>
             <div class="div-banner"> 
-                
             </div>
         </div>
     </div>
@@ -41,21 +40,20 @@
 </div>
 <div class="right-panel">
     <div class="top-bar-right">
-        <img src=""/>
+        <img class="profilepic" :src="User.ProfilePic"/>
         <p>{{User.FirstName}}</p>
         <p>{{User.LastName}}</p>
         <p>{{User.Username}}</p>
-        <p>{{User.Status}}</p>
     </div>
     <div class="middle-bar-right">
         <p> Travel Plans List Here</p>
     
     </div>
     <div class="bottom-bar-right">
-        <div class="half-bl">
+        <div class="lb">
             <h3>Create A New Travel Plan</h3>
         </div>
-        <div class="half-br">
+        <div class="rb">
             <h3>Join A Travel Plan</h3>
         </div>
     </div>
@@ -85,7 +83,7 @@ export default {
             CityBanner:'../../Assets/la-banner.jpg'
         },
         User:{
-            ProfilePic:'../../Assets/la-banner.jpg',
+            ProfilePic:require(`../../Assets/profolio.png`),
             FirstName:'Vincent',
             LastName:'Occhiogrosso',
             Username:'@iamvincento',
@@ -351,9 +349,9 @@ export default {
             .div-banner {
                 background-image:url('../../Assets/la-banner.png');
                 background-position-y: 60%;
-                background-position-x: 920%;
+                background-position-x: 20%;
                 height: 100%;
-                width: 30%;
+                width: 25%;
                 position: absolute;
                 left:75%;
             }
@@ -361,7 +359,7 @@ export default {
             
 
         .middle-bar-left {
-            background-color: whitesmoke;
+            background-image: url('../../Assets/nyc-bk.png');
             color: black;
             height: 80vh;
             position: absolute;
@@ -401,13 +399,28 @@ export default {
     }
 
         .top-bar-right {
-            background-color: #3D80CB;
+            background-color: #424f5f;
             height: 10vh;
             position: absolute;
             top: 0%;
             left: 0%;
             width: 30vw;
         }
+
+            .profilepic {
+                position: absolute;
+                left:5%;
+                top:10%;
+                height:80%;
+            }
+
+            .top-bar-right p {
+                text-align:left;
+                font-size: 1.35vh;
+                font-weight: bold;
+                letter-spacing: 0.15em;
+                padding-left:22.5%;
+            }
 
         .middle-bar-right {
             background-color: #48617F;
@@ -426,5 +439,23 @@ export default {
             left: 0%;
             width: 30vw;
         }
+
+            #lb {
+                border: 1px solid black;
+                width: 50%;
+                position: absolute;
+                left:0%;
+                top: 0%;
+                height: 100%;
+            }
+
+            #rb {
+                border: 1px solid black;
+                width: 50%;
+                position: absolute;
+                left:50%;
+                top: 0%;
+                height: 100%;
+            }
 
 </style>

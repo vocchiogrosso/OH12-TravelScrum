@@ -60,7 +60,7 @@ export default {
         }
         if(result.status==200){
           localStorage.setItem(SessionToken,result.data.SessionToken);
-          var result = await axios({
+          var store = await axios({
           method: 'post',
           url: ('http://localhost:3400/v0/auth/sendEmail'),
           headers:{
@@ -71,6 +71,8 @@ export default {
             'Password':this.Password
           }
         });
+        this.$router.push({ name: 'dashboard', query: { redirect: '/dashboard/' } });
+
         }else{
           alert('Not Found');
         }
