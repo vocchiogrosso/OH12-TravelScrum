@@ -56,26 +56,8 @@ export default {
         });
         } catch(error) {
           console.log(error);
-          return;
         }
-        if(result.status==200){
-          localStorage.setItem(SessionToken,result.data.SessionToken);
-          var store = await axios({
-          method: 'post',
-          url: ('http://localhost:3400/v0/auth/sendEmail'),
-          headers:{
-            "Authorization":localStorage.getItem('SessionToken')
-          },
-          data:{
-            'Email':this.Email,
-            'Password':this.Password
-          }
-        });
-        this.$router.push({ name: 'dashboard', query: { redirect: '/dashboard/' } });
-
-        }else{
-          alert('Not Found');
-        }
+        await this.$router.push('/dashboard');
       }
     },
 }
