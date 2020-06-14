@@ -29,7 +29,9 @@
         </div>
     </div>
     <div class="middle-bar-left">
+        <div class="main-panel">
 
+        </div>
     </div>
     <div class="bottom-bar-left">
 
@@ -43,13 +45,17 @@
         <p>{{User.Username}}</p>
         <p>{{User.Status}}</p>
     </div>
-
-    </div>
     <div class="middle-bar-right">
-
+        <p> Travel Plans List Here</p>
+    
     </div>
     <div class="bottom-bar-right">
-
+        <div class="half-bl">
+            <h3>Create A New Travel Plan</h3>
+        </div>
+        <div class="half-br">
+            <h3>Join A Travel Plan</h3>
+        </div>
     </div>
 </div>
 <!--||-->
@@ -83,7 +89,45 @@ export default {
             LastName:'Occhiogrosso',
             Username:'@iamvincento',
             Status:'Online'
-        }
+        },
+        CalendarEvents:{
+                    
+        },
+        TravelPlans:[
+            {
+                Title:'Gregs Wedding',
+                Location:'Los Angeles',
+                StartDate: 'Mar. 19th',
+                EndDate: 'Mar. 23rd',
+                Status: 'Completed',
+                Link: ''
+            },
+            {
+                Title:'Gregs Wedding',
+                Location:'Los Angeles',
+                StartDate: 'Mar. 19th',
+                EndDate: 'Mar. 23rd',
+                Status: 'Completed',
+                Link: ''
+            },
+            {
+                Title:'Gregs Wedding',
+                Location:'Los Angeles',
+                StartDate: 'Mar. 19th',
+                EndDate: 'Mar. 23rd',
+                Status: 'Completed',
+                Link: ''
+            },
+            {
+                Title:'Gregs Wedding',
+                Location:'Los Angeles',
+                StartDate: 'Mar. 19th',
+                EndDate: 'Mar. 23rd',
+                Status: 'Completed',
+                Link: ''
+            }
+        ],
+
       }
     },
 }
@@ -93,7 +137,7 @@ export default {
 .screen {
     color: white;
     left: 0%;
-    min-height: 100vh;
+    height: 100vh;
     position: absolute;
     top: 0%;
     width: 100vw;
@@ -124,6 +168,17 @@ export default {
             left: 0%;
             width: 70vw;
         }
+
+            .main-panel {
+                background-color: white;
+                border: .5px solid gray;
+                box-shadow: 2% 2% 2% black;
+                height: 80%;
+                top: 10%;
+                position: relative;
+                left: 10%;
+                width: 80%;
+            }
 
         .bottom-bar-left {
             background-color: #48617F;
@@ -158,7 +213,7 @@ export default {
             height: 80vh;
             position: absolute;
             top: 10%;
-            left: 70%;
+            left: 0%;
             width: 30vw;
         }
 
@@ -167,7 +222,17 @@ export default {
             height: 10vh;
             position: absolute;
             top: 90%;
-            left: 70%;
+            left: 0%;
             width: 30vw;
         }
+
+            .half-bl {
+                height: 100%;
+                width:50%;
+            }
+
+            .half-br {
+                height: 100%;
+                width: 50%;
+            }
 </style>
