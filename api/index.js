@@ -1,3 +1,4 @@
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const chalk = require('chalk');
 const cors = require('cors');
@@ -21,9 +22,9 @@ api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
 
 //Database Connection
-const ConnectionString = require('./database/connection');
+const ConnectionString = require('./database/connect');
 const Connection_String = ConnectionString.BuildConnectionString();
-mongoose.connect(Connection_String,{ useNewUrlParser: true, useUnifiedTopology: true, });
+mongoose.connect(Connection_String,{ useNewUrlParser: true, useUnifiedTopology: true});
     mongoose.set('useFindAndModify', false);
     mongoose.set('useCreateIndex', true);
 console.log(ConnectionString.CheckConnectionState());
@@ -32,28 +33,15 @@ mongoose.connection.once('open', function(res) {
   nextup();
 });
 
-
-/*
-api.use((req,res,next)=> {
-    console.log(req.headers.authorization);
-    if(req.headers.authorization !== "Bearer "+"Testing"){
-        res.sendStatus(401);
-        return
-    }
-    next();
-});
-*/
-
 function nextup(){
-
     // HOMEPAGE
     api.get('/',(req,res)=>{
         res.sendStatus(200);
     });
-
+    
     // API AUTH ROUTES
-    const authRoutes = require('./routes/authRoutes');
-    api.use('/auth',authRoutes);
+    const router = require('./router/index');
+    api.use('/',router);
     
     // Listen For Port
     api.listen(port, () => 

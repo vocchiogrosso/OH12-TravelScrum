@@ -13,7 +13,10 @@
             <p>Password</p>
             <input type="password" placeholder="Enter Password"/>
             <hr>
-            <input type="submit" value="Login"/>
+            <router-link to="/dashboard/">
+                <input type="submit" value="Login"/>
+            </router-link>
+            <br>
             <router-link to="/auth/reset">Forgot Password</router-link>
             <div class="bottom">
                 <p>Don't already have an account?<router-link to="/auth/register">Register</router-link></p>
