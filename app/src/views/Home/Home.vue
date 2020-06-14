@@ -7,7 +7,7 @@
                 <h2>Login</h2>
             </div>
         </router-link>
-        <router-link to="/auth/login">
+        <router-link to="/auth/register">
             <div class="button" id="btn-2">
                 <h2>Register</h2>
             </div>

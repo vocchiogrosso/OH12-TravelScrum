@@ -71,8 +71,62 @@ const routes = [
         name: 'Main',
         path: '',
         component: Main
+      },
+      {
+        name: 'Impact',
+        path: 'impact',
+        component: Impact
+      },
+      {
+        name: 'Schedule',
+        path: 'schedule',
+        component: Schedule
       }
     ],
+  },
+  {
+    path: '/booking',
+    name: 'booking',
+    component: Booking,
+    children: [
+      {
+        name:'Search',
+        path: 'search',
+        component: Search
+      },
+      {
+        name:'Summary',
+        path:'summary',
+        component:Summary
+      },
+      {
+        name:'Payment',
+        path:'payment',
+        component:Payment
+      },
+      {
+        name:'Receipt',
+        path:'receipt',
+        component: Receipt
+      }
+    ]
+  },
+  {
+    name: 'Planner',
+    path: '/planner',
+    component: Planner,
+    children:[
+      {
+        name:'Session',
+        path:'session',
+        component: Session
+      },
+      {
+        name:'Calendar',
+        path:'calendar',
+        component: Calendar
+      }
+    ]
   },
   {
     path: '*',
