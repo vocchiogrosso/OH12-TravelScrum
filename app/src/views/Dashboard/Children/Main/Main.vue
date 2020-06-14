@@ -4,10 +4,10 @@
 <div class="left-panel">
     <div class="top-bar-left">
         <div>
-            <div class="div">
-                <p>Next Trip</p>
+            <div class="title-div">
+                <p>Next<br> Trip</p>
             </div>
-            <div class="div">
+            <div class="next-city-div">
                 <p>{{Next.Weather}}</p>
                 <p>{{Next.HighTemp}}</p>
                 <p>{{Next.LowTemp}}</p>
@@ -160,6 +160,25 @@ export default {
             width: 70vw;
         }
 
+            .title-div {
+                background-color: #254266;
+                height: 100%;
+                font-size: 2.25vh;
+                top: 0%;
+                position: absolute;
+                width: 7.5%;
+            }
+
+            .next-city-div {
+                background-color: #3D80CB;
+                height: 100%;
+                font-size: 2.25vh;
+                top: 0%;
+                left:7.5%;
+                position: absolute;
+                width: 25%;
+            }
+
         .middle-bar-left {
             background-color: whitesmoke;
             height: 80vh;
@@ -226,13 +245,4 @@ export default {
             width: 30vw;
         }
 
-            .half-bl {
-                height: 100%;
-                width:50%;
-            }
-
-            .half-br {
-                height: 100%;
-                width: 50%;
-            }
 </style>
