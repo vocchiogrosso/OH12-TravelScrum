@@ -3,7 +3,9 @@
 <!--||-->
 <div class="left-panel">
     <div class="top-bar-left">
-
+        <div>
+            <h3>Next Trip</h3>
+        </div>
     </div>
     <div class="middle-bar-left">
 
@@ -35,6 +37,7 @@ export default {
 <!--||-->
 <style scoped>
 .screen {
+    color: white;
     left: 0%;
     min-height: 100vh;
     position: absolute;

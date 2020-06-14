@@ -1,10 +1,9 @@
 require('dotenv').config();
 const chalk = require('chalk');
 const crypto = require('crypto');
-const randomstring = require('randomstring');
 // Models
-const User = require('../../../../../database/models/user'); 
-const Session = require('../../../../../database/models/sessions');
+const Account = require('../../../../../database/models/users/account');
+const Session = require('../../../../../database/models/users/sessions');
 
 module.exports={
     loginUser
@@ -13,7 +12,7 @@ module.exports={
 async function loginUser(req,res){
     try {
         console.log('User Search');
-        var result = await User.findOne({ 
+        var result = await Account.findOne({ 
             Email: req.body.Email, 
             Password: (crypto.pbkdf2Sync(req.body.Password,process.env.ENC_HASH,20000,128,'sha512').toString('hex'))
         });

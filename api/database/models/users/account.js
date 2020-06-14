@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     LastName:{
         type:String
     },
+    PhoneNumber:{
+        type:String
+    },
     DOB:{
         type:String
     },

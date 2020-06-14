@@ -1,23 +1,22 @@
 <template>
 <div class="screen">
     <div id="third">
-        <br>
-        <p>Welcome To</p>
         <img class="banner" src="../../Assets/TravelBook - Banner.png"/>
         <p>Let's Get Started</p>
         <hr>
         <p>Please Fill Out The Following <br> Form To Create An Account</p>
         <form>
             <p>Email</p>
-            <input type="text" placeholder="e.g., user@example.com"/>
+            <input type="text" v-model="Email" placeholder="e.g., user@example.com"/>
             <p>Password</p>
-            <input type="password" placeholder="Enter Password"/>
+            <input type="password" v-model="Password" placeholder="Enter Password"/>
             <p>Repeat Password</p>
             <input type="password" placeholder="Repeat Password"/>
             <hr>
             <input type="checkbox"/>
             <p>By clicking the checkbox, you agree to follow our <router-link to="/">Terms and Conditions.</router-link></p>
-            <input class="registerbtn" type="submit" value="Register"/>
+            <button type="submit" class="loginbtn" @click="register()">Register</button>
+            <br>
             <div class="bottom">
                 <p>Already have an account?<router-link to="/auth/login">Sign In</router-link></p>
             </div>
@@ -33,8 +32,37 @@
 </template>
 <!--| |-->
 <script>
+import axios from 'axios'
 export default {
-    name:'register'
+    name:'register',
+    data(){
+      return {
+        Accepted:false,
+        Email:'',
+        Password:''
+      }
+    },
+    methods:{
+      async register(){
+        console.log('Test');
+        var result = await axios({
+          method: 'post',
+          url: ('http://localhost:3400/v0/auth/register'),
+          headers:{
+            
+          },
+          data:{
+            'Email':this.Email,
+            'Password':this.Password
+          }
+        });
+        if(result.status==200){
+          alert('Account Created, You Can Now Login');
+        }else{
+          alert('Error');
+        }
+      }
+    }
 }
 </script>
 <!--| |-->

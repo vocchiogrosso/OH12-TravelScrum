@@ -1,4 +1,4 @@
-const Session = require('../../database/models/sessions');
+const Session = require('../../database/models/users/sessions');
 
 async function is(req, res, next) {
     if(localStorage.getItem('SessionToken')!=undefined){

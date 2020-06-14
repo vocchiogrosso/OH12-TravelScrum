@@ -13,12 +13,10 @@
             <p>Password</p>
             <input type="password" placeholder="Enter Password" v-model="Password" required/>
             <hr>
-            <router-link to="/dashboard/">
-                <input class="loginbtn" type="submit" value="Login"/>
-            </router-link>
-            <br>
+            <input class="loginbtn" type="submit" value="Login" @click="login()"/>
+            <br><br>
             <router-link to="/auth/reset">Forgot Password</router-link>
-            <div class="container register">
+            <div class=" register">
                 <p>Don't already have an account?<router-link to="/auth/register">Register</router-link></p>
             </div>
         </form>
@@ -33,12 +31,38 @@
 </template>
 <!--| |-->
 <script>
+import axios from 'axios'
 export default {
     name:'login',
     data(){
       return {
         Email:'',
         Password:''
+      }
+    },
+    methods:{
+      async login(){
+        try {
+        var result = await axios({
+          method: 'post',
+          url: ('http://localhost:3400/v0/auth/login'),
+          headers:{
+            
+          },
+          data:{
+            'Email':this.Email,
+            'Password':this.Password
+          }
+        });
+        } catch(error) {
+          console.log(error);
+          return;
+        }
+        if(result.status==200){
+            this.$router.push('/dashboard/');
+        }else{
+          alert('Not Found');
+        }
       }
     },
 }
