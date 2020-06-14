@@ -59,7 +59,7 @@ export default {
           return;
         }
         if(result.status==200){
-            this.$router.push('/dashboard/');
+            
         }else{
           alert('Not Found');
         }

@@ -4,7 +4,27 @@
 <div class="left-panel">
     <div class="top-bar-left">
         <div>
-            <h3>Next Trip</h3>
+            <div>
+                <p>Next Trip</p>
+            </div>
+            <div>
+                <p>{{Next.Weather}}</p>
+                <p>{{Next.HighTemp}}</p>
+                <p>{{Next.LowTemp}}</p>
+                <p>{{Next.City}},{{Next.State}}</p>
+                <p>{{Next.NextDate}}</p>
+            </div>
+            <div>
+                <p>{{Next.FlightDepartLoc}}</p>
+                <p>{{Next.FlightArrivingLoc}}</p>
+                <p>{{Next.FlightNumber}}</p>
+            </div>
+            <div>
+                <p>{{Next.DepartureTime}}</p>
+                <p>{{Next.DepartureTime}}</p>
+            </div>
+            <div> 
+                <img src='{{Next.CityBanner}}'/>
         </div>
     </div>
     <div class="middle-bar-left">
@@ -31,7 +51,30 @@
 <!--||-->
 <script>
 export default {
-    name:'Main'
+    name:'Main',
+    data(){
+      return {
+        Next:{
+            Weather:'Sunny',
+            HighTemp:51,
+            LowTemp:49,
+            City:'Los Angeles',
+            State:'CA',
+            NextDate:'March 19th 2020',
+
+            FlightDepartLoc:'JFK T4',
+            FlightArrivingLoc:'LAX T2',
+            FlightNumber:'DL1406',
+
+            DepartureTime:'06:15AM EST',
+            ArrivalTime:'09:15AM EST',
+            CityBanner:'../../Assets/la-banner.jpg'
+        },
+        User:{
+            ProfilePic:
+        }
+      }
+    },
 }
 </script>
 <!--||-->
