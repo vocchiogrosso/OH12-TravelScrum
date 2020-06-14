@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
 const SessionSchema = new mongoose.Schema({
-    UserID:{
-        type:String,
-        required:true
+    UserID: {
+        type: mongoose.ObjectId,
+        required: true
     },
-    SessionToken:{
-        type:String,
-        unique:true
+    SessionToken: {
+        type: String,
+        unique: true
     },
-    Expiration:{
-        type:Date,
-        required:true
+    Expiration: {
+        type: Date,
+        required: true
     }
 });
 

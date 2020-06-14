@@ -9,6 +9,8 @@ module.exports={
     registerUser
 }
 
+const { _SendEmail } = require('../sendEmail');
+
 async function registerUser(req,res){
     try {
         console.log('Creating User');
