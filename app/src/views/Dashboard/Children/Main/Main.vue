@@ -4,27 +4,28 @@
 <div class="left-panel">
     <div class="top-bar-left">
         <div>
-            <div>
+            <div class="div">
                 <p>Next Trip</p>
             </div>
-            <div>
+            <div class="div">
                 <p>{{Next.Weather}}</p>
                 <p>{{Next.HighTemp}}</p>
                 <p>{{Next.LowTemp}}</p>
                 <p>{{Next.City}},{{Next.State}}</p>
                 <p>{{Next.NextDate}}</p>
             </div>
-            <div>
+            <div class="div">
                 <p>{{Next.FlightDepartLoc}}</p>
                 <p>{{Next.FlightArrivingLoc}}</p>
                 <p>{{Next.FlightNumber}}</p>
             </div>
-            <div>
+            <div class="div">
                 <p>{{Next.DepartureTime}}</p>
                 <p>{{Next.DepartureTime}}</p>
             </div>
-            <div> 
-                <img src='{{Next.CityBanner}}'/>
+            <div class="div"> 
+                
+            </div>
         </div>
     </div>
     <div class="middle-bar-left">
@@ -36,6 +37,12 @@
 </div>
 <div class="right-panel">
     <div class="top-bar-right">
+        <img src=""/>
+        <p>{{User.FirstName}}</p>
+        <p>{{User.LastName}}</p>
+        <p>{{User.Username}}</p>
+        <p>{{User.Status}}</p>
+    </div>
 
     </div>
     <div class="middle-bar-right">
@@ -71,7 +78,11 @@ export default {
             CityBanner:'../../Assets/la-banner.jpg'
         },
         User:{
-            ProfilePic:
+            ProfilePic:'../../Assets/la-banner.jpg',
+            FirstName:'Vincent',
+            LastName:'Occhiogrosso',
+            Username:'@iamvincento',
+            Status:'Online'
         }
       }
     },
@@ -147,7 +158,7 @@ export default {
             height: 80vh;
             position: absolute;
             top: 10%;
-            left: 0%;
+            left: 70%;
             width: 30vw;
         }
 
@@ -156,7 +167,7 @@ export default {
             height: 10vh;
             position: absolute;
             top: 90%;
-            left: 0%;
+            left: 70%;
             width: 30vw;
         }
 </style>

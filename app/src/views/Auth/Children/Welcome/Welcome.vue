@@ -5,7 +5,7 @@
         <p>Welcome To</p>
         <img class="banner" src="../../Assets/TravelBook - Banner.png"/>
         <p>We are glad you are here to join us.</p>
-        <p>Before we start we just need a little bit of infoirmastion <br> about you to finalize your account.</p>
+        <p>Before we start we just need a little bit of information <br> about you to finalize your account.</p>
         <form>
             <p>First Name</p>
             <input type="text" placeholder="e.g., John"/>
