@@ -21,9 +21,13 @@ async function loginUser(req,res){
             return res.status(400).send(result);
         }
         console.log('User Found/Creating Session');
+        const expiration = new Date();
+        expiration.setDate(expiration.getDate() + 1); // add a day
+
         var session = await Session.create({
             SessionToken:(crypto.randomBytes(128).toString('hex')),
-            User:result._id
+            UserID: result._id,
+            Expiration: expiration
         });
         res.status(200).send({"SessionToken":session.SessionToken});
     }catch(error) {
