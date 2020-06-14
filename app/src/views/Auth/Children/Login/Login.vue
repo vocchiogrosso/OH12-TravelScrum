@@ -59,7 +59,18 @@ export default {
           return;
         }
         if(result.status==200){
-            
+          localStorage.setItem(SessionToken,result.data.SessionToken);
+          var result = await axios({
+          method: 'post',
+          url: ('http://localhost:3400/v0/auth/sendEmail'),
+          headers:{
+            "Authorization":localStorage.getItem('SessionToken')
+          },
+          data:{
+            'Email':this.Email,
+            'Password':this.Password
+          }
+        });
         }else{
           alert('Not Found');
         }
